@@ -87,7 +87,8 @@ So we need to call the oracle once for :math:`f(0)` and once for :math:`f(1)` to
 the problem. Two calls to the oracle are necessary (we can't make a decision with only one call)
 and sufficient (we learn nothing new by a third call).
 
-Here is the classical code that solves Deutsch's problem. You can find it in the ``algorithms`` sections of the language repository.
+Here is the classical code that solves Deutsch's problem.
+You can find it in the ``algorithms`` sections of the language repository at `Classical and quantum algorithms in Avalon <https://github.com/avalon-lang/algorithms/>`.
 
 .. code::
     

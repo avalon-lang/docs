@@ -88,7 +88,7 @@ the problem. Two calls to the oracle are necessary (we can't make a decision wit
 and sufficient (we learn nothing new by a third call).
 
 Here is the classical code that solves Deutsch's problem.
-You can find it in the ``algorithms`` sections of the language repository at `Classical and quantum algorithms in Avalon <https://github.com/avalon-lang/algorithms/>`.
+You can find it in the ``deutsch`` folder in the algorithm repository at `Classical and quantum algorithms in Avalon <https://github.com/avalon-lang/algorithms/tree/master/deutsch/>`_.
 
 .. code::
     

@@ -76,14 +76,14 @@ So how many times exactly do we need to call the oracle here?
 
 If we call the oracle passing it :math:`0`, the first combination will return :math:`1`.
 But the third combination will also return :math:`1`. Note also that the second combination
-will return :math:`0` with :math:`0`. So if cannot hope to know if the oracle is balanced
+will return :math:`0` with :math:`0`. We cannot hope to know if the oracle is balanced
 or constant by passing it :math:`0` alone. The same argument applies for :math:`1`.
 
 But note that if we call the oracle with :math:`0` then with :math:`1`, we can make some progress.
 If :math:`f(0)=0` and :math:`f(1)=0` are equal then we know the oracle is constant by definition.
 The same argument can be used by definition of a balanced function.
 
-So we need to call the oracle once for :math:`f(0)` and once for :math:`f(1)` to solve
+Therefore we need to call the oracle once for :math:`f(0)` and once for :math:`f(1)` to solve
 the problem. Two calls to the oracle are necessary (we can't make a decision with only one call)
 and sufficient (we learn nothing new by a third call).
 

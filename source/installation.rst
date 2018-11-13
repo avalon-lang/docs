@@ -79,4 +79,4 @@ between sessions.
 To run your programs, invoke the interpreter from your terminal followed by your file
 with the main function and optional arguments separated by a space::
 
-    $ avaloniq prog.avl arg_1 arg_2 arg_n
+    $ avaloni prog.avl arg_1 arg_2 arg_n

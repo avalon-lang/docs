@@ -145,15 +145,28 @@ the quantum algorithm can work with. We can't use the flow in :numref:`classical
 because it is not reversible. So we need to build an equivalent flow that has the same
 effect but runnable on a quantum computer.
 
-To make our oracles reversible, we use the following scheme: let :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}`
-be a boolean function. We create a new function :math:`F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B}`
-mapped as shown below.
+To make our oracles reversible, we use the following scheme, dubbed *XOR encoding of boolean functions*.
 
 .. admonition:: XOR encoding of boolean functions
+    
+    Let :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` be a boolean function.
+    Define :math:`F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B}` as 
+    :math:`F(x_1, x_2, \ldots, x_n, z) = (x_1, x_2, \ldots, x_n, z \oplus f(x_1, x_2, \ldots, x_n))`.
+    The function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` is an encoding of :math:`f:\mathbb{B}^n \to \mathbb{B}`.
 
-    :math:`F(x_1, x_2, \ldots, x_n, z) = (x_1, x_2, \ldots, x_n, z \oplus f(x_1, x_2, \ldots, x_n))`
 
+So we have transformed our classical function into a new function that is equivalent to it but with additional properties:
 
-So we have transformed our classical function into a new function that takes booleans and returns a pair of booleans.
+* The function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` is reversible.
+* The original function :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` can be recovered by taking :math:`z \oplus f(x_1, x_2, \ldots, x_n) \oplus z`.
 
+The two properties above of the function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` mean
+that it is executable on a quantum computer and from the answer it provides we are able
+to recover the original answer the classical function would have given.
+
+As mentioned above, we won't see how to build oracles from :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}`
+but it is a good exercise if you want to try it. We are going to do the following though:
+
+* See how to use the oracle from :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` in the algorithm.
+* Understand how the algorithm solves Deutsch's problem.
 

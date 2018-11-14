@@ -1,0 +1,5 @@
+PREAMBLE \providecommand{\ket}[1]{\left| #1 \right\rangle}
+
+a W \ket{x} \ket{x}
+b W \ket{y} \ket{x, y\oplus f(x)}
+a b G $U_f$ length=50

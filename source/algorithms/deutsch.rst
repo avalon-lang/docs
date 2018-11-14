@@ -184,7 +184,7 @@ Let us first look at a circuit similar to the one in :numref:`classical_oracle`.
     :align: center
     :alt: Quantum oracle for Deutsch problem
 
-    Quantum algorithm executing the function :math:`f` using its encoding :math:`U_f(x, y)=|x,y\rangle`.
+    Quantum oracle executing the function :math:`f` using its encoding :math:`U_f(x, y)=|x,y\rangle`.
 
 
 The oracle is given a two bits in the form :math:`|x, y\rangle` and produces two outputs of the form :math:`|x, y \oplus f(x)\rangle`

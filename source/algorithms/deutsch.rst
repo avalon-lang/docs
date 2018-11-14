@@ -129,8 +129,8 @@ any algorithm that allows us to solve the exact same problem in less than two ca
 (that is in one call) is better than the current classical algorithm. And coming right next up
 is that solution, first due to David Deutsch.
 
-Quantum solution: Deutsch's algorithm
--------------------------------------
+Quantum solution
+----------------
 
 Quantum algorithms are a bit harder to figure out and harder to reason about concerning
 their correctness. But we will do that here at the expense of explaining the oracles.
@@ -139,6 +139,9 @@ If you read the code for classical oracles, they are not hard to understand. But
 not immediately obvious how they got translated to quantum oracles. No matter, it is not
 our objective to construct the oracles, you are not supposed to peek into them anyway.
 So we are going to focus on the algorithm itself.
+
+Classical oracle to quantum oracle
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To get started, we need to transform the way the classical oracle is called into a flow
 the quantum algorithm can work with. We can't use the flow in :numref:`classical_oracle`
@@ -197,3 +200,29 @@ Looking at :numref:`quantum_oracle`, we can see how the quantum oracle is truly 
   This output is equivalent to :math:`|x, (y \oplus f(x)) \oplus f(x)\rangle`. Rearranging, we get :math:`|x, y \oplus (f(x) \oplus f(x))\rangle`.
   And finally eliminating :math:`f(x)` due to XOR, we get as final output :math:`|x, y\rangle`.
   And with that we have the original input! Therefore the quantum oracle is reversible.
+
+Deutsch's algorithm
+~~~~~~~~~~~~~~~~~~~
+
+We are ready to tackle the quantum algorithm. We won't discuss how to derive it and
+will limit ourselves to understanding how it works. Why it works is another matter
+that is not presented and you are encouraged to read references given at the end of
+this section.
+
+We present a circuit description of the algorithm from which we shall derive the final
+program.
+
+.. _deutsch_algorithm:
+.. figure:: /_diagrams/deutsch/algorithm.png
+    :scale: 40%
+    :align: center
+    :alt: Deutsch algorithm
+
+    Deutsch's algorithm as the quantum solution to Deutsch's problem.
+
+
+Using the :numref:`deutsch_algorithm` as reference, we are going to analyze what it does
+and how we find out if the oracle is balanced or constant from its output.
+
+
+

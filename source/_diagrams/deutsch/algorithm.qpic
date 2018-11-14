@@ -1,0 +1,10 @@
+PREAMBLE \providecommand{\ket}[1]{\left| #1 \right\rangle}
+
+a W \ket{0}
+b W \ket{1} $TRASH$
+
+a H
+b H
+a b G $U_f$ length=40
+a H
+a M

@@ -74,14 +74,13 @@ make our decision of whether we have a balanced or constant oracle.
 
 We can visualize the classical algorithm running as shown below.
 
+.. _classical_solution:
 .. figure:: /_diagrams/deutsch/classical.png
     :scale: 40%
     :align: center
     :alt: Classical solution to Deutsch problem
 
     Classical algorithm executing the oracle :math:`f`.
-
-    :math:`|x\rangle` is the input and :math:`|f(x)\rangle` is the output.
 
 
 So how many times exactly do we need to call the oracle here?

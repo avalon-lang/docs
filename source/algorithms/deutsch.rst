@@ -25,10 +25,10 @@ zero or one.
 
 What are the possible input/output combinations of this function?
 
-* First combination: :math:`f(0) \to 1` and :math:`f(1) \to 1`.
-* Second combination: :math:`f(0) \to 0` and :math:`f(1) \to 1`.
-* Third combination: :math:`f(0) \to 1` and :math:`f(1) \to 0`.
-* Fourth combination: :math:`f(0) \to 0` and :math:`f(1) \to 0`.
+* First combination: :math:`f_{0}(0) \to 1` and :math:`f_{0}(1) \to 1`.
+* Second combination: :math:`f_{1}(0) \to 0` and :math:`f_{1}(1) \to 1`.
+* Third combination: :math:`f_{2}(0) \to 1` and :math:`f_{2}(1) \to 0`.
+* Fourth combination: :math:`f_{3}(0) \to 0` and :math:`f_{3}(1) \to 0`.
 
 Notice that for the first and the fourth combinations, the output doesn't change
 irrespective of the input. The output is constant; hence the function is said to be
@@ -144,5 +144,15 @@ To get started, we need to transform the way the classical oracle is called into
 the quantum algorithm can work with. We can't use the flow in :numref:`classical_solution`
 because it is not reversible. So we need to build an equivalent flow that has the same
 effect but runnable on a quantum computer.
+
+To make our oracles reversible, we use the following scheme: let :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}`
+be a boolean function. We create a new function :math:`F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B}`
+mapped as shown below.
+
+.. math::
+    
+    F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B} = \(x_1, x_2, \ldots, x_n, z oplus f(x_1, x_2, \ldots, x_n)\)
+
+
 
 

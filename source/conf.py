@@ -184,3 +184,8 @@ epub_exclude_files = ['search.html']
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
+
+# -- Table and figures options
+
+# If true, figures, tables and code-blocks are automatically numbered if they have a caption. The numref role is enabled.
+numfig = True

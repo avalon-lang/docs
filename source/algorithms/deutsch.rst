@@ -184,8 +184,16 @@ Let us first look at a circuit similar to the one in :numref:`classical_oracle`.
     :align: center
     :alt: Quantum oracle for Deutsch problem
 
-    Quantum oracle executing the function :math:`f` using its encoding :math:`U_f(x, y)=|x,y\rangle`.
+    Quantum oracle executing the function :math:`f` using its encoding :math:`U_f(x, y)=|x,y \oplus f(x)\rangle`.
 
 
-The oracle is given a two bits in the form :math:`|x, y\rangle` and produces two outputs of the form :math:`|x, y \oplus f(x)\rangle`
+The oracle is given two bits in the form :math:`|x, y\rangle` and produces output of the form :math:`|x, y \oplus f(x)\rangle`.
+Looking at :numref:`quantum_oracle`, we can see how the quantum oracle is truly quantum and at the same time can be used to get back the classical oracle.
 
+* To get back the original oracle from the output, we ignore :math:`|x\rangle` and XOR :math:`|y \oplus f(x)\rangle` with :math:`|y\rangle` resulting in :math:`|f(x)\rangle` which is the result of the classical oracle.
+* To prove that the quantum oracle is truly quantum and therefore must be reversible we only need to show that executing the oracle passing it its own output gives back the original input.
+  To show that, let :math:`z = y \oplus f(x)`. Thus the new input is :math:`|x, z\rangle`.
+  Giving that input to the oracle, the expected output is :math:`|x, z \oplus f(x)\rangle`.
+  This output is equivalent to :math:`|x, (y \oplus f(x)) \oplus f(x)\rangle`. Rearranging, we get :math:`|x, y \oplus (f(x) \oplus f(x))\rangle`.
+  And finally eliminating :math:`f(x)` due to XOR, we get as final output :math:`|x, y\rangle`.
+  And with that we have the original input! Therefore the quantum oracle is reversible.

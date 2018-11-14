@@ -72,6 +72,18 @@ Many things may go into the final but right now, we do know that we would like t
 the number of times we call the oracle. The more we call it the longer it will take to
 make our decision of whether we have a balanced or constant oracle.
 
+We can visualize the classical algorithm running as shown below.
+
+.. figure:: /_diagrams/deutsch/classical.png
+    :scale: 40%
+    :align: center
+    :alt: Classical solution to Deutsch problem
+
+    Classical algorithm executing the oracle :math:`f`.
+
+    :math:`|x\rangle` is the input and :math:`|f(x)\rangle` is the output.
+
+
 So how many times exactly do we need to call the oracle here?
 
 If we call the oracle passing it :math:`0`, the first combination will return :math:`1`.
@@ -112,5 +124,21 @@ You can find it in the ``deutsch`` folder in the algorithm repository at `Classi
         -- we are done
         return
 
+
+Notice that we are calling the oracle twice, first in step 1 then in step 2. Therefore,
+any algorithm that allows us to solve the exact same problem in less than two calls 
+(that is in one call) is better than the current classical algorithm. And coming next up
+is that solution.
+
+Quantum solution: Deutsch's algorithm
+-------------------------------------
+
+Quantum algorithms are a bit harder to figure out and harder to reason about concerning
+their correctness. But we will do that here at the expense of explaining the oracles.
+
+If you read the code for classical oracles, they are not hard to understand. But it is
+not immediately obvious how they got translated to quantum oracles. No matter, it is not
+our objective to construct the oracles, you are not supposed to peek into them by thw way.
+So we are going to focus on the algorithm itself.
 
 

@@ -150,8 +150,8 @@ To make our oracles reversible, we use the following scheme, dubbing it *XOR enc
 .. admonition:: XOR encoding of boolean functions
     
     | Let :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` be a boolean function.  
-    | Define :math:`F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B}` as :math:`F(x_1, x_2, \ldots, x_n, z) = (x_1, x_2, \ldots, x_n, z \oplus f(x_1, x_2, \ldots, x_n))`.
-    | The function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` is an encoding of :math:`f:\mathbb{B}^n \to \mathbb{B}` and equivalent to it up to the ancilla :math:`z`.
+    | Define :math:`F(x_1, x_2, \ldots, x_n, y):\mathbb{B}^{n+1} \to \mathbb{B}` as :math:`F(x_1, x_2, \ldots, x_n, y) = (x_1, x_2, \ldots, x_n, y \oplus f(x_1, x_2, \ldots, x_n))`.
+    | The function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` is the XOR encoding of :math:`f:\mathbb{B}^n \to \mathbb{B}` and is equivalent to it up to the ancilla :math:`y`.
 
 
 So we have transformed our classical function into a new function that is equivalent to it but with additional properties:
@@ -164,8 +164,18 @@ that it is executable on a quantum computer and from the answer it provides we a
 to recover the original answer the classical function would have given.
 
 As mentioned above, we won't see how to build oracles from :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}`
-but it is a good exercise if you want to try it. We are going to do the following though:
+but it is a good exercise if you want to try it. Neither are we going to actually find the output.
+We are going to do the following though:
 
-* See how to use the oracle from :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` in the algorithm.
+* See how to use the oracles from :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` in the algorithm.
 * Understand how the algorithm solves Deutsch's problem.
+
+To begin, we are going to simplify the XOR encoding and limit :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` to :math:`f(x):\mathbb{B}^n \to \mathbb{B}`.
+This means that its encoding is given by :math:`F(x, y):\mathbb{B}^{2} \to \mathbb{B}`.
+
+Then, we are going to shift to the bracket notation in order to simplify calculations and make :math:`F(x, y):\mathbb{B}^{2} \to \mathbb{B}` equivalent to :math:`|x, y\rangle`.
+For our satisfaction, let us show that :math:`|x, y\rangle` is both reversible and :math:`f(x)` can be recovered from it.
+
+Let us first look at a circuit similar to the one in :numref:`classical_solution`.
+
 

@@ -149,10 +149,9 @@ To make our oracles reversible, we use the following scheme, dubbing it *XOR enc
 
 .. admonition:: XOR encoding of boolean functions
     
-    Let :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` be a boolean function.  
-    | Define :math:`F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B}` as 
-    :math:`F(x_1, x_2, \ldots, x_n, z) = (x_1, x_2, \ldots, x_n, z \oplus f(x_1, x_2, \ldots, x_n))`.
-    | The function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` is an encoding of :math:`f:\mathbb{B}^n \to \mathbb{B}`.
+    | Let :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` be a boolean function.  
+    | Define :math:`F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B}` as :math:`F(x_1, x_2, \ldots, x_n, z) = (x_1, x_2, \ldots, x_n, z \oplus f(x_1, x_2, \ldots, x_n))`.
+    | The function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` is an encoding of :math:`f:\mathbb{B}^n \to \mathbb{B}` and equivalent to it up to the ancilla :math:`z`.
 
 
 So we have transformed our classical function into a new function that is equivalent to it but with additional properties:

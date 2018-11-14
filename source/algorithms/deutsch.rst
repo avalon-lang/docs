@@ -68,7 +68,7 @@ Classical solution
 
 So we are given the oracle, now we need to find out if it is balanced or constant.
 As programmers, part our business is finding out how to solve problems efficiently.
-Many things may go into the final solution but right now, we do know that we would like to reduce
+Many things may go into the final solution but right now we do know that we would like to reduce
 the number of times we call the oracle. The more we call it the longer it will take to
 make our decision of whether we have a balanced or a constant oracle.
 
@@ -88,18 +88,18 @@ So how many times exactly do we need to call the oracle here?
 If we call the oracle passing it :math:`0`, the first combination will return :math:`1`.
 But the third combination will also return :math:`1`. Also, the second combination
 will return :math:`0` when given :math:`0` as input. We cannot hope to know if the oracle is balanced
-or constant by passing it :math:`0` alone. The same argument applies for :math:`1`.
+or constant by passing it :math:`0` alone. The same argument applies when :math:`1` is given as input.
 
 But note that if we call the oracle with :math:`0` then with :math:`1`, we can make some progress.
 If :math:`f(0)` and :math:`f(1)` are equal then we know the oracle is constant by definition.
 The same argument can be used by definition of a balanced function.
 
 Therefore we need to call the oracle once for :math:`f(0)` and once for :math:`f(1)` to solve
-the problem. Two calls to the oracle are necessary (we can't make a decision with only one call)
-and sufficient (we learn nothing new by a third call).
+the problem. Two calls to the oracle are *necessary* (we can't make a decision with only one call)
+and *sufficient* (we learn nothing new by a third call).
 
 Here is the classical code that solves Deutsch's problem.
-You can find it in the ``deutsch`` folder in the algorithm repository at `Classical and quantum algorithms in Avalon <https://github.com/avalon-lang/algorithms/tree/master/deutsch/>`_.
+You can find it in the ``deutsch`` folder in the algorithms repository at the `Classical and Quantum Algorithms in Avalon <https://github.com/avalon-lang/algorithms/tree/master/deutsch/>`_.
 
 .. code::
     
@@ -127,7 +127,7 @@ You can find it in the ``deutsch`` folder in the algorithm repository at `Classi
 Notice that we are calling the oracle twice, first in step 1 then in step 2. Therefore,
 any algorithm that allows us to solve the exact same problem in less than two calls 
 (that is in one call) is better than the current classical algorithm. And coming right next up
-is that solution.
+is that solution, first due to David Deutsch.
 
 Quantum solution: Deutsch's algorithm
 -------------------------------------
@@ -137,7 +137,7 @@ their correctness. But we will do that here at the expense of explaining the ora
 
 If you read the code for classical oracles, they are not hard to understand. But it is
 not immediately obvious how they got translated to quantum oracles. No matter, it is not
-our objective to construct the oracles, you are not supposed to peek into them by anyway.
+our objective to construct the oracles, you are not supposed to peek into them anyway.
 So we are going to focus on the algorithm itself.
 
 

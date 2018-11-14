@@ -61,7 +61,7 @@ our input(s). Note that nothing is said about reading the output. Read on and fi
 
 .. note::
     Throughout the section, we are going to assume that we are given combinations as oracles
-    of the form :math:`f_{i}(n)` for :math:`\forall i \in \{0, 1, 2, 3\}` and :math:`n \in \mathbb{B}`. 
+    of the form :math:`f_{i}(n)` for :math:`i \in \{0, 1, 2, 3\}` and :math:`n \in \mathbb{B}`. 
 
 Classical solution
 ------------------

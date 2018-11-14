@@ -74,13 +74,13 @@ make our decision of whether we have a balanced or a constant oracle.
 
 We can visualize the classical algorithm running as shown below.
 
-.. _classical_solution:
+.. _classical_oracle:
 .. figure:: /_diagrams/deutsch/classical.png
     :scale: 40%
     :align: center
-    :alt: Classical solution to Deutsch problem
+    :alt: Classical oracle for Deutsch problem
 
-    Classical algorithm executing the oracle :math:`f`.
+    Classical oracle executing the function :math:`f`.
 
 
 So how many times exactly do we need to call the oracle here?
@@ -141,7 +141,7 @@ our objective to construct the oracles, you are not supposed to peek into them a
 So we are going to focus on the algorithm itself.
 
 To get started, we need to transform the way the classical oracle is called into a flow
-the quantum algorithm can work with. We can't use the flow in :numref:`classical_solution`
+the quantum algorithm can work with. We can't use the flow in :numref:`classical_oracle`
 because it is not reversible. So we need to build an equivalent flow that has the same
 effect but runnable on a quantum computer.
 
@@ -150,32 +150,42 @@ To make our oracles reversible, we use the following scheme, dubbing it *XOR enc
 .. admonition:: XOR encoding of boolean functions
     
     | Let :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` be a boolean function.  
-    | Define :math:`F(x_1, x_2, \ldots, x_n, y):\mathbb{B}^{n+1} \to \mathbb{B}` as :math:`F(x_1, x_2, \ldots, x_n, y) = (x_1, x_2, \ldots, x_n, y \oplus f(x_1, x_2, \ldots, x_n))`.
-    | The function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` is the XOR encoding of :math:`f:\mathbb{B}^n \to \mathbb{B}` and is equivalent to it up to the ancilla :math:`y`.
+    | Define :math:`U_f(x_1, x_2, \ldots, x_n, y):\mathbb{B}^{n+1} \to \mathbb{B}` as :math:`U_f(x_1, x_2, \ldots, x_n, y) = (x_1, x_2, \ldots, x_n, y \oplus f(x_1, x_2, \ldots, x_n))`.
+    | The function :math:`U_f:\mathbb{B}^{n+1} \to \mathbb{B}` is the XOR encoding of :math:`f:\mathbb{B}^n \to \mathbb{B}` and is equivalent to it up to the ancilla :math:`y`.
 
 
 So we have transformed our classical function into a new function that is equivalent to it but with additional properties:
 
-* The function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` is reversible.
+* The function :math:`U_f:\mathbb{B}^{n+1} \to \mathbb{B}` is reversible.
 * The original function :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` can be recovered by taking :math:`z \oplus f(x_1, x_2, \ldots, x_n) \oplus z`.
 
-The two properties above of the function :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` mean
+The two properties above of the function :math:`U_f:\mathbb{B}^{n+1} \to \mathbb{B}` mean
 that it is executable on a quantum computer and from the answer it provides we are able
 to recover the original answer the classical function would have given.
 
-As mentioned above, we won't see how to build oracles from :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}`
+As mentioned above, we won't see how to build oracles from :math:`U_f:\mathbb{B}^{n+1} \to \mathbb{B}`
 but it is a good exercise if you want to try it. Neither are we going to actually find the output.
 We are going to do the following though:
 
-* See how to use the oracles from :math:`F:\mathbb{B}^{n+1} \to \mathbb{B}` in the algorithm.
+* See how to use the oracles from :math:`U_f:\mathbb{B}^{n+1} \to \mathbb{B}` in the algorithm.
 * Understand how the algorithm solves Deutsch's problem.
 
 To begin, we are going to simplify the XOR encoding and limit :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` to :math:`f(x):\mathbb{B}^n \to \mathbb{B}`.
-This means that its encoding is given by :math:`F(x, y):\mathbb{B}^{2} \to \mathbb{B}`.
+This means that its encoding is given by :math:`U_f(x, y):\mathbb{B}^{2} \to \mathbb{B}`.
 
-Then, we are going to shift to the bracket notation in order to simplify calculations and make :math:`F(x, y):\mathbb{B}^{2} \to \mathbb{B}` equivalent to :math:`|x, y\rangle`.
-For our satisfaction, let us show that :math:`|x, y\rangle` is both reversible and :math:`f(x)` can be recovered from it.
+Then, we are going to shift to the bracket notation in order to simplify calculations and make :math:`U_f(x, y):\mathbb{B}^{2} \to \mathbb{B}` accept inputs of the form :math:`|x, y\rangle`.
+For our satisfaction, let us show that :math:`U_f(x, y):\mathbb{B}^{2} \to \mathbb{B}` is both reversible and :math:`f(x)` can be recovered from it.
 
-Let us first look at a circuit similar to the one in :numref:`classical_solution`.
+Let us first look at a circuit similar to the one in :numref:`classical_oracle`.
 
+.. _quantum_oracle:
+.. figure:: /_diagrams/deutsch/quantum.png
+    :scale: 40%
+    :align: center
+    :alt: Quantum oracle for Deutsch problem
+
+    Quantum algorithm executing the function :math:`f` using its encoding :math:`U_f(x, y)=|x,y\rangle`.
+
+
+The oracle is given a two bits in the form :math:`|x, y\rangle` and produces two outputs of the form :math:`|x, y \oplus f(x)\rangle`
 

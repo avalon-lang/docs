@@ -44,10 +44,10 @@ we call it balanced in both combinations.
 
 
 There are lots of interesting questions we can ask about this function (yes, actually a lot).
-But here one we are going to try to solve: suppose we are given one of the four combinations
-randomly. Without being told which one and being allowed to look inside,
+But here is one we are going to try to solve: suppose we are given one of the four combinations
+randomly. Without being told which one or being allowed to look inside,
 we are asked if it is balanced or constant. This is called Deutsch's problem after David Deutsch
-who first proposed a quantum solution to this problem in 1985 (and mind you, his solution worked
+who first proposed a quantum solution to this problem in 1985 (and mind you, his first solution worked
 only half the time). When we are given a function which implementation we don't know,
 we call it a black box or more formally an oracle.
 
@@ -56,8 +56,8 @@ we call it a black box or more formally an oracle.
     Let :math:`f:\mathbb{B} \to \mathbb{B}` be an oracle. Is :math:`f` balanced or constant?
 
 
-One remark though, however obvious, is that we are going to need to call the oracle, pass it
-our input(s). Note that nothing is said about reading the output. Read on to find out why.
+One remark though, however obvious, is that we are going to need to call the oracle and pass it
+our input(s). Note that nothing is said about reading the output. Read on and find out why.
 
 .. note::
     Throughout the section, we are going to assume that we are given combinations as oracles
@@ -68,9 +68,9 @@ Classical solution
 
 So we are given the oracle, now we need to find out if it is balanced or constant.
 As programmers, part our business is finding out how to solve problems efficiently.
-Many things may go into the final but right now, we do know that we would like to reduce
+Many things may go into the final solution but right now, we do know that we would like to reduce
 the number of times we call the oracle. The more we call it the longer it will take to
-make our decision of whether we have a balanced or constant oracle.
+make our decision of whether we have a balanced or a constant oracle.
 
 We can visualize the classical algorithm running as shown below.
 
@@ -87,7 +87,7 @@ So how many times exactly do we need to call the oracle here?
 
 If we call the oracle passing it :math:`0`, the first combination will return :math:`1`.
 But the third combination will also return :math:`1`. Also, the second combination
-will return :math:`0` with :math:`0`. We cannot hope to know if the oracle is balanced
+will return :math:`0` when given :math:`0` as input. We cannot hope to know if the oracle is balanced
 or constant by passing it :math:`0` alone. The same argument applies for :math:`1`.
 
 But note that if we call the oracle with :math:`0` then with :math:`1`, we can make some progress.
@@ -126,7 +126,7 @@ You can find it in the ``deutsch`` folder in the algorithm repository at `Classi
 
 Notice that we are calling the oracle twice, first in step 1 then in step 2. Therefore,
 any algorithm that allows us to solve the exact same problem in less than two calls 
-(that is in one call) is better than the current classical algorithm. And coming next up
+(that is in one call) is better than the current classical algorithm. And coming right next up
 is that solution.
 
 Quantum solution: Deutsch's algorithm
@@ -137,7 +137,7 @@ their correctness. But we will do that here at the expense of explaining the ora
 
 If you read the code for classical oracles, they are not hard to understand. But it is
 not immediately obvious how they got translated to quantum oracles. No matter, it is not
-our objective to construct the oracles, you are not supposed to peek into them by thw way.
+our objective to construct the oracles, you are not supposed to peek into them by anyway.
 So we are going to focus on the algorithm itself.
 
 

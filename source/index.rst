@@ -62,14 +62,14 @@ Topics
 
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Algorithms
 
     algorithms/deutsch.rst
 
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Language reference
 
     reference/syntax

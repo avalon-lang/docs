@@ -74,7 +74,10 @@ You can set ``AVALON_HOME`` directly for one session with the following::
 You can also edit ``~/.bashrc`` and add the same line in it and have the SDK always accessible
 between sessions.
 
-7. **Run your programs**
+Running your program
+--------------------
+
+The interpreter expects only the file that contains the function :code:`__main__`.
 
 To run your programs, invoke the interpreter from your terminal followed by your file
 with the main function and optional arguments separated by a space::

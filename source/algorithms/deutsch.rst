@@ -149,10 +149,11 @@ To make our oracles reversible, we use the following scheme: let :math:`f(x_1, x
 be a boolean function. We create a new function :math:`F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B}`
 mapped as shown below.
 
-.. math::
-    
-    F(x_1, x_2, \ldots, x_n, z):\mathbb{B}^{n+1} \to \mathbb{B} = \(x_1, x_2, \ldots, x_n, z oplus f(x_1, x_2, \ldots, x_n)\)
+.. admonition:: XOR encoding of boolean functions
+
+    F(x_1, x_2, \ldots, x_n, z) = (x_1, x_2, \ldots, x_n, z \oplus f(x_1, x_2, \ldots, x_n))
 
 
+So we have transformed our classical function into a new function that takes booleans and returns a pair of booleans.
 
 

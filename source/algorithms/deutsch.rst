@@ -140,4 +140,9 @@ not immediately obvious how they got translated to quantum oracles. No matter, i
 our objective to construct the oracles, you are not supposed to peek into them anyway.
 So we are going to focus on the algorithm itself.
 
+To get started, we need to transform the way the classical oracle is called into a flow
+the quantum algorithm can work with. We can't use the flow in :numref:`classical_solution`
+because it is not reversible. So we need to build an equivalent flow that has the same
+effect but runnable on a quantum computer.
+
 

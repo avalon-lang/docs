@@ -176,8 +176,8 @@ We are going to do the following though:
 To begin, we are going to simplify the XOR encoding and limit :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` to :math:`f(x):\mathbb{B}^n \to \mathbb{B}`.
 This means that its encoding is given by :math:`U_f(x, y):\mathbb{B}^{2} \to \mathbb{B}`.
 
-Then, we are going to shift to the bracket notation in order to simplify calculations and make :math:`U_f(x, y):\mathbb{B}^{2} \to \mathbb{B}` accept inputs of the form :math:`|x, y\rangle`.
-For our satisfaction, let us show that :math:`U_f(x, y):\mathbb{B}^{2} \to \mathbb{B}` is both reversible and :math:`f(x)` can be recovered from it.
+Then we are going to shift to the bracket notation in order to simplify calculations and make :math:`U_f(x, y):\mathbb{B}^{2} \to \mathbb{B}` accept inputs of the form :math:`|x, y\rangle`.
+For our satisfaction, let us show that :math:`U_f(|x, y\rangle):\mathbb{B}^{2} \to \mathbb{B}` is both reversible and :math:`f(x)` can be recovered from it.
 
 Let us first look at a circuit similar to the one in :numref:`classical_oracle`.
 
@@ -187,7 +187,7 @@ Let us first look at a circuit similar to the one in :numref:`classical_oracle`.
     :align: center
     :alt: Quantum oracle for Deutsch problem
 
-    Quantum oracle executing the function :math:`f` using its encoding :math:`U_f(x, y)=|x,y \oplus f(x)\rangle`.
+    Quantum oracle executing the function :math:`f` using its encoding :math:`U_f(|x, y\rangle)=|x,y \oplus f(x)\rangle`.
 
 
 The oracle is given two bits in the form :math:`|x, y\rangle` and produces output of the form :math:`|x, y \oplus f(x)\rangle`.

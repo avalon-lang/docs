@@ -76,7 +76,7 @@ We can visualize the classical algorithm running as shown below.
 
 .. _classical_oracle:
 .. figure:: /_diagrams/deutsch/classical.png
-    :scale: 40%
+    :scale: 35%
     :align: center
     :alt: Classical oracle for Deutsch problem
 
@@ -183,7 +183,7 @@ Let us first look at a circuit similar to the one in :numref:`classical_oracle`.
 
 .. _quantum_oracle:
 .. figure:: /_diagrams/deutsch/quantum.png
-    :scale: 40%
+    :scale: 35%
     :align: center
     :alt: Quantum oracle for Deutsch problem
 
@@ -214,7 +214,7 @@ program.
 
 .. _deutsch_algorithm:
 .. figure:: /_diagrams/deutsch/algorithm.png
-    :scale: 40%
+    :scale: 35%
     :align: center
     :alt: Deutsch algorithm
 

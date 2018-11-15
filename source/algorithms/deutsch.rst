@@ -157,10 +157,10 @@ To make our oracles reversible, we use the following scheme, dubbing it *XOR enc
     | The function :math:`U_f:\mathbb{B}^{n+1} \to \mathbb{B}` is the XOR encoding of :math:`f:\mathbb{B}^n \to \mathbb{B}` and is equivalent to it up to the ancilla :math:`y`.
 
 
-So we have transformed our classical function into a new function that is equivalent to it but with additional properties:
+So we have transformed our classical function into a new function that is equivalent to it but with two important properties:
 
 * The function :math:`U_f:\mathbb{B}^{n+1} \to \mathbb{B}` is reversible.
-* The original function :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` can be recovered by taking :math:`z \oplus f(x_1, x_2, \ldots, x_n) \oplus z`.
+* The original function :math:`f(x_1, x_2, \ldots, x_n):\mathbb{B}^n \to \mathbb{B}` ouput can be recovered by taking :math:`y \oplus f(x_1, x_2, \ldots, x_n) \oplus y`.
 
 The two properties above of the function :math:`U_f:\mathbb{B}^{n+1} \to \mathbb{B}` mean
 that it is executable on a quantum computer and from the answer it provides we are able

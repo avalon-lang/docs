@@ -1,7 +1,7 @@
 .. highlight:: none
 
-Expression statements
-=====================
+Expressions
+===========
 
 Expressions arise from the user of literals, operators and function calls.
 Due to the type system, the need may arise to supplement type information on expressions in order to write better code.

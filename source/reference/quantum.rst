@@ -69,7 +69,7 @@ For instance, to construct a controlled Hadamard gate, only simple does the foll
     val had_cgate:cgate = CGate(had_gate)
 
 
-Appling gate to single qubits
+Applying gate to single qubits
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Applying gates to qubits is extremely simple. One simply calls the ``apply`` function, passing it the gate and the qubit(s) to apply the gate to.
@@ -145,9 +145,9 @@ All standard gates live in the ``quant`` package and are bound to the ``Quant`` 
     "Pauli X", "px(q : ref qubit) -> void", "Quant.px(ref q)"
     "Controlled X", "cx(control : ref qubit, target : ref qubit) -> void", "Quant.cx(ref q1, ref q2)"
     "Pauli Y", "py(q : ref qubit) -> void", "Quant.py(ref q)"
-    "Controlled X", "cy(control : ref qubit, target : ref qubit) -> void", "Quant.cy(ref q1, ref q2)"
+    "Controlled Y", "cy(control : ref qubit, target : ref qubit) -> void", "Quant.cy(ref q1, ref q2)"
     "Pauli Z", "pz(q : ref qubit) -> void", "Quant.pz(ref q)"
-    "Controlled X", "cz(control : ref qubit, target : ref qubit) -> void", "Quant.cz(ref q1, ref q2)"
+    "Controlled Z", "cz(control : ref qubit, target : ref qubit) -> void", "Quant.cz(ref q1, ref q2)"
     "Rotation about X", "rx(q : ref qubit, theta : float) -> void", "Quant.rx(ref q, Math.PI)"
     "Controlled rotation about X", "crx(control : ref qubit, target : ref qubit, val theta : float) -> void", "Quant.crx(ref q1, ref q2, 0.0)"
     "Rotation about Y", "ry(q : ref qubit, theta : float) -> void", "Quant.ry(ref q, Math.PI / 2.0)"

@@ -502,6 +502,23 @@ References are created with the ``ref`` keyword both for type instances and for 
     var original_name = dref alias
 
 
+The following operations are available on references: identity comparison.
+
+.. code::
+    
+    -- variables to reference
+    val q1 = 0q0, q2 = 0q1
+    val ref_q1 = ref q1, ref_q2 = ref q2
+
+    -- check if two references are identical - meaning they reference the same variable
+    if ref q1 is ref q2:
+        Io.println("Both references alias to the same variable.")
+
+    -- check if two references are not identical - meaning they don't reference the same variable
+    if ref_q1 is not ref_q2:
+        Io.println("Both reference do not alias the same variable.")
+
+
 References have the following restrictions:
 
 * A variable containing a reference is immutable. It means that a reference variable cannot reasigned once set.

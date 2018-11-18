@@ -221,7 +221,7 @@ program.
     Deutsch's algorithm as the quantum solution to Deutsch's problem.
 
 
-Using the :numref:`deutsch_algorithm` as reference, we are going to analyze what it does
+Using :numref:`deutsch_algorithm` as reference, we are going to analyze what the algorithm does
 and how we find out if the oracle is balanced or constant from its output.
 
 

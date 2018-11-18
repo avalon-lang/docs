@@ -100,9 +100,14 @@ Let us demonstrate with an example, reusing our previous code:
 
 
 .. note::
-    The SDK that comes with the compiler has a few builtin gates: indentity gate,
-    Pauli X, Y and Z, rotation about X, Y and Z, controlled X, Y and Z and the Hadamard gate.
+    The SDK that comes with the compiler has a few builtin gates that you can find in the table below.
     So you do not need to create them. Please see the table at the end of this section to see the list of those gates.
+
+
+.. warning::
+    Controlled gates and the swap gate require that their two qubit references arguments not be identical and the SDK will enforce it.
+    Unfortunately, at the moment, the gate will simply not be applied if for instance references to control qubit and the target qubit are identical.
+    No error message will be emitted. This will be corrected in future versions of the SDK.
 
 
 Measuring single qubits
@@ -136,14 +141,26 @@ All standard gates live in the ``quant`` package and are bound to the ``Quant`` 
     :widths: auto
 
     "Indentity", "id(q : ref qubit) -> void", "Quant.id(ref q)"
+    "Controlled identity", "cid(control : ref qubit, target : ref qubit) -> void", "Quant.cid(ref q1, ref q2)"
     "Pauli X", "px(q : ref qubit) -> void", "Quant.px(ref q)"
-    "Pauli Y", "py(q : ref qubit) -> void", "Quant.py(ref q)"
-    "Pauli Z", "pz(q : ref qubit) -> void", "Quant.pz(ref q)"
-    "Rotation about X", "rx(q : ref qubit, theta : float) -> void", "Quant.rx(ref q, Math.PI)"
-    "Rotation about Y", "ry(q : ref qubit, theta : float) -> void", "Quant.ry(ref q, Math.PI / 2.0)"
-    "Rotation about Z", "rz(q : ref qubit, phi : float) -> void", "Quant.rz(ref q, 0.0)"
     "Controlled X", "cx(control : ref qubit, target : ref qubit) -> void", "Quant.cx(ref q1, ref q2)"
+    "Pauli Y", "py(q : ref qubit) -> void", "Quant.py(ref q)"
     "Controlled X", "cy(control : ref qubit, target : ref qubit) -> void", "Quant.cy(ref q1, ref q2)"
+    "Pauli Z", "pz(q : ref qubit) -> void", "Quant.pz(ref q)"
     "Controlled X", "cz(control : ref qubit, target : ref qubit) -> void", "Quant.cz(ref q1, ref q2)"
+    "Rotation about X", "rx(q : ref qubit, theta : float) -> void", "Quant.rx(ref q, Math.PI)"
+    "Controlled rotation about X", "crx(control : ref qubit, target : ref qubit, val theta : float) -> void", "Quant.crx(ref q1, ref q2, 0.0)"
+    "Rotation about Y", "ry(q : ref qubit, theta : float) -> void", "Quant.ry(ref q, Math.PI / 2.0)"
+    "Controlled rotation about Y", "cry(control : ref qubit, target : ref qubit, val theta : float) -> void", "Quant.cry(ref q1, ref q2, Math.PI / 2.0)"
+    "Rotation about Z", "rz(q : ref qubit, phi : float) -> void", "Quant.rz(ref q, 0.0)"
+    "Controlled rotation about Z", "crz(control : ref qubit, target : ref qubit, val phi : float) -> void", "Quant.crz(ref q1, ref q2, Math.PI)"
+    "Phase", "phase(q : ref qubit, lambda : float) -> void", "Quant.phase(ref q, Math.PI / 8.0)"
+    "Controlled phase", "cphase(q1 : ref qubit, q2 : ref qubit, lambda : float, val lambda : float) -> void", "Quant.cphase(ref q1, ref q2, Math.PI / 8.0)"
+    "S", "s(q : ref qubit) -> void", "Quant.s(ref q)"
+    "Controlled S", "cs(q1 : ref qubit, q2 : ref qubit) -> void", "Quant.cs(ref q1, ref q2)"
+    "T", "t(q : ref qubit) -> void", "Quant.t(ref q)"
+    "Controlled T", "ct(q1 : ref qubit, q2 : ref qubit) -> void", "Quant.ct(ref q1, ref q2)"
     "Hadamard", "had(q : ref qubit) -> void", "Quant.had(ref q)"
+    "Controlled hadamard", "chad(q1 : ref qubit, q2 : ref qubit) -> void", "Quant.chad(ref q1, ref q2)"
+    "Swap", "swap(q1 : ref qubit, q2 : ref qubit) -> void", "Quant.swap(ref q1, ref q2)"
 

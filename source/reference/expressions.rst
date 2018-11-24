@@ -130,6 +130,31 @@ Type instances can be attached to maps as well.
     var others = {}:{string:int}
 
 
+Conditional expressions
+-----------------------
+
+Avalon offers conditional expressions in order to avoid the use of an if statement
+for simple expressions. The syntax is :code:`primary_expression if condition else alternative_expression`.
+
+The ``primary_expression`` will be returned if the ``condition`` is True and the ``alternative_expression``
+will be returned otherwise.
+
+.. code::
+    
+    val age = 90
+    var maturity = "Major" if age > 18 else "Minor"
+
+
+There are restriction on conditional expressions to be aware of when using them.
+
+* Conditional expressions cannot be nested. This means that one cannot use a conditional
+expression as a ``primary_expression`` nor as a ``condition`` nor as an ``alternative_expression``.
+
+* The ``primary_expression`` must be have the same type instance as the ``alternative_expression``.
+
+* If the ``primary_expression`` is a string, list or map, it must have the same length as the ``alternative_expression``.
+
+
 Restrictions on type instance attachment
 ----------------------------------------
 

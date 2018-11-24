@@ -147,8 +147,7 @@ will be returned otherwise.
 
 There are restriction on conditional expressions to be aware of when using them.
 
-* | Conditional expressions cannot be nested. This means that one cannot use a conditional
-  | expression as a ``primary_expression`` nor as a ``condition`` nor as an ``alternative_expression``.
+* Conditional expressions cannot be nested. This means that one cannot use a conditional expression as a ``primary_expression`` nor as a ``condition`` nor as an ``alternative_expression``.
 
 * The ``primary_expression`` must be have the same type instance as the ``alternative_expression``.
 

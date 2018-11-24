@@ -69,8 +69,8 @@ For instance, to construct a controlled Hadamard gate, only simple does the foll
     val had_cgate:cgate = CGate(had_gate)
 
 
-Applying gate to single qubits
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Applying gates to single qubits
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Applying gates to qubits is extremely simple. One simply calls the ``apply`` function, passing it the gate and the qubit(s) to apply the gate to.
 For 1-Qubit gates, ``apply`` has the signature :code:`apply(g : gate, q : ref qubit) -> void` and for controlled gates it has the signature

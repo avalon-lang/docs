@@ -10,7 +10,7 @@ inside a package shall not be accessible outside the package.
 This comes with a few rules especially for type declarations and function declarations.
 
 .. attention::
-    All declarations are public by default. Unlike commonly accepted convention is making everything
+    All declarations are public by default. Unlike the commonly accepted convention of making everything
     private, I have found so far this restriction to be getting in the way while providing little benefit
     unless the user truly wants a declaration to be private.
 
@@ -28,11 +28,11 @@ A type declaration is declared public or private by prepending the type declarat
         | Tertio
 
 
-The type ``trio`` in the code above can be accessed outside the package within which it is declared.
+The type ``trio`` in the code above cannot be accessed outside the package within which it is declared.
 It is not necessary to declare a type public since all declarations, type declarations included, are public by default.
 
 .. warning::
-    A type declared public cannot be used with public global variables or in public functions signature.
+    A type declared private cannot be used with public global variables or in public functions signature.
 
 Variable declarations
 ---------------------
@@ -60,5 +60,5 @@ A function declaration is declared public or private by prepending the function 
         return 0
 
 
-Same with other declarations, a function declaration is public by default so there is rarely any need to declare public.
+Same with other declarations, a function declaration is public by default so there is rarely any need to declare it as public.
 And to reitarate, a public function cannot use in its signature a type instance from a private type.
